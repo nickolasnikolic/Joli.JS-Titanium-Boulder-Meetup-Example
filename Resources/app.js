@@ -26,6 +26,17 @@ if (Ti.version < 1.8 ) {
 	//yourself what you consider a tablet form factor for android
 	var isTablet = osname === 'ipad' || (osname === 'android' && (width > 899 || height > 899));
 	
+	// Initialize the DB and models
+	var joli = require('lib/vendor/joli.js/joli').connect('recipes', '/db/recipes.db');
+	
+	// Init models TODO flatten this?
+	var ModelClass = require('models/models');
+	var models = new ModelClass(joli);
+	
+	
+	/*var item = models.category.findOneBy('name', 'Vegetarian');
+	alert(item.recipes());*/
+	
 	var Window;
 	if (isTablet) {
 		Window = require('ui/tablet/ApplicationWindow');

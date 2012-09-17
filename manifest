@@ -1,8 +1,8 @@
-#appname: Meetup Example
-#publisher: zachhendershot
-#url: http://
-#image: appicon.png
-#appid: com.hendershot.meetupexample
-#desc: undefined
-#type: ipad
-#guid: 0f227ee3-8d93-4fe9-81b2-97a9e920c235
+#appname:Meetup Example
+#publisher:zachhendershot
+#url:http://
+#image:appicon.png
+#appid:com.hendershot.meetupexample
+#desc:not specified
+#type:mobile
+#guid:0f227ee3-8d93-4fe9-81b2-97a9e920c235
