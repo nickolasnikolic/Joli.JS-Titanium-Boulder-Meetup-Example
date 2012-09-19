@@ -9,8 +9,10 @@ function RecipeView(recipes) {
 			title:recipes[key].name
 		});
 		row.addEventListener('click', function(e) {
-			var this_recipe = Globals.models.recipe.findOneBy('name', this.title).directions;
+			var this_recipe = Globals.models.recipe.findOneBy('name', this.title);
 			
+			var Window = require('ui/RecipeDetailWindow');
+			Globals.navController.open(new Window(this_recipe));
 		});
 		return row;
 	});
