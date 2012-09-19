@@ -1,7 +1,7 @@
 //Application Window Component Constructor
-function ApplicationWindow() {
+function RecipeWindow(recipes) {
 	//load component dependencies
-	var HomeView = require('ui/common/HomeView');
+	var RecipeView = require('ui/common/RecipeView');
 		
 	//create component instance
 	var self = Ti.UI.createWindow({
@@ -9,11 +9,11 @@ function ApplicationWindow() {
 	});
 		
 	//construct UI
-	var homeView = new HomeView();
-	self.add(homeView);
+	var recipeView = new RecipeView(recipes);
+	self.add(recipeView);
 	
 	return self;
 }
 
 //make constructor function the public component interface
-module.exports = ApplicationWindow;
+module.exports = RecipeWindow;

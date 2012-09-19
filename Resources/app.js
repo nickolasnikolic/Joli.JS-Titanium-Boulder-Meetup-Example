@@ -14,6 +14,9 @@ if (Ti.version < 1.8 ) {
 	alert('Sorry - this application template requires Titanium Mobile SDK 1.8 or later');	  	
 }
 
+// Setup a global object to populate a few things needed globally across the app
+var Globals = {};
+
 // This is a single context application with mutliple windows in a stack
 (function() {
 	//determine platform and form factor and render approproate components
@@ -26,16 +29,16 @@ if (Ti.version < 1.8 ) {
 	//yourself what you consider a tablet form factor for android
 	var isTablet = osname === 'ipad' || (osname === 'android' && (width > 899 || height > 899));
 	
+	// Init the global variables
+	var Navigation = require('controller/Navigation').Navigation;
+	Globals.navController = new Navigation();
+	
 	// Initialize the DB and models
 	var joli = require('lib/vendor/joli.js/joli').connect('recipes', '/db/recipes.db');
 	
-	// Init models TODO flatten this?
+	// Init models
 	var ModelClass = require('models/models');
-	var models = new ModelClass(joli);
-	
-	
-	/*var item = models.category.findOneBy('name', 'Vegetarian');
-	alert(item.recipes());*/
+	Globals.models = new ModelClass(joli);
 	
 	var Window;
 	if (isTablet) {
@@ -51,5 +54,5 @@ if (Ti.version < 1.8 ) {
 			Window = require('ui/handheld/ApplicationWindow');
 		}
 	}
-	new Window().open();
+	Globals.navController.open(new Window());
 })();

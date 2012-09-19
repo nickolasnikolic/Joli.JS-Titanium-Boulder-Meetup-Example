@@ -15,7 +15,7 @@ function Models(joli) {
 		methods: {
 			numInCategory:  function(categoryName) {
 				// search for the category name
-				var category = joli.models.get('category').findOneBy('name', categoryName);
+				var category = joli.models.get('categories').findOneBy('name', categoryName);
 
 				if (!category) {
 				  throw 'Could not find a category with the name ' + categoryName + '!';
@@ -31,7 +31,7 @@ function Models(joli) {
 			},
 			numInType: function(typeName) {
 				// search for the category name
-				var type = joli.models.get('type').findOneBy('name', typeName);
+				var type = joli.models.get('types').findOneBy('name', typeName);
 
 				if (!type) {
 				  throw 'Could not find a type with the name ' + typeName + '!';
