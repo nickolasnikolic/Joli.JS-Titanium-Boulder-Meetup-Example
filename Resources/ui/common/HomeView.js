@@ -52,6 +52,21 @@ function HomeView() {
 		Globals.navController.open(new Window());
 	});
 	
+	var search_button = Ti.UI.createButton({
+        color:'#000000',
+        title:L('search'),
+        height:'auto',
+        width:'auto',
+        top:200
+    });
+    self.add(search_button);
+    
+    //Add behavior for UI
+    search_button.addEventListener('click', function(e) {
+        var Window = require('ui/SearchWindow');
+        Globals.navController.open(new Window());
+    });
+	
 	return self;
 }
 
