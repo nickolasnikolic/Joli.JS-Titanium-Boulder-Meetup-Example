@@ -43,8 +43,7 @@ var Globals = {};
 	var Window;
 	if (isTablet) {
 		Window = require('ui/tablet/ApplicationWindow');
-	}
-	else {
+	} else {
 		// Android uses platform-specific properties to create windows.
 		// All other platforms follow a similar UI pattern.
 		if (osname === 'android') {

@@ -7,7 +7,7 @@
         <target device="android">false</target>
         <target device="blackberry">false</target>
     </deployment-targets>
-    <sdk-version>2.1.2.GA</sdk-version>
+    <sdk-version>2.1.3.v20120915120319</sdk-version>
     <id>com.hendershot.meetupexample</id>
     <name>Meetup Example</name>
     <version>1.0</version>

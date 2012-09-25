@@ -66,6 +66,28 @@ function HomeView() {
         var Window = require('ui/SearchWindow');
         Globals.navController.open(new Window());
     });
+    
+    var new_button = Ti.UI.createButton({
+        color:'#000000',
+        title:L('create_recipe'),
+        height:'auto',
+        width:'auto',
+        top:260
+    });
+    self.add(new_button);
+    
+    new_button.addEventListener('click', function(e) {
+        var newRecipe = Globals.models.recipe.newRecord({
+            name:           'New Recipe',
+            servings:       1,
+            ingredients:    '1 Carrot<br/>2 Pears',
+            directions:     'Cut Carrot<br/>Eat Pears',
+            note:           'This is a great summer recipe',
+            credits:        'I came up with this off the top of my head!'
+        });
+
+        newRecipe.save();
+    });
 	
 	return self;
 }

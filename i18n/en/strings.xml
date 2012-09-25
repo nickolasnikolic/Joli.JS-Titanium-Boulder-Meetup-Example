@@ -4,4 +4,5 @@
 	<string name="types">Browse Recipe Types</string>
 	<string name="categories">Browse Recipe Categories</string>
 	<string name="search">Search for Recipes</string>
+	<string name="create_recipe">Create Recipe</string>
 </resources>
